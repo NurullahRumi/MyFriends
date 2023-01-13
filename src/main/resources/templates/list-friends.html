@@ -17,6 +17,7 @@
             <th>Phone Number</th>
             <th>Address</th>
             <th>Present Address</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -26,10 +27,15 @@
             <td th:text="${friend.phNo}"></td>
             <td th:text="${friend.address}"></td>
             <td th:text="${friend.preAdd}"></td>
+            <td>
+              <a th:href="@{/showUpdateForm(friendId=${friend.id})}" class="btn btn-info">Update</a>
+              <a th:href="@{/deleteFriend(friendId=${friend.id})}" class="btn btn-danger ml-2">Delete</a>
+            </td>
 
           </tr>
         </tbody>
       </table>
+      <a th:href="@{/addFriendForm}" class="btn btn-primary">Add Friend</a>
     </div>
   </body>
 </html>
